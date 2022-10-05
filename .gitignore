@@ -1,0 +1,16 @@
+**/.svn
+**/bin
+**/obj
+**/Log
+**/.vs
+**/.vscode
+/packages/*
+*.log
+UpgradeLog*.htm
+CaisseIris*.suo
+mssccprj.scc
+/CaisseIris.Winforms/Installer/build/*
+**/*.csproj.user
+/ExternalLibs/TlvUtils.pdb
+/ExternalLibs/TlvLib.pdb
+/ExternalLibs/TlvCashRegisterLib.pdb

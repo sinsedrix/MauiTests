@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTabbedDI.Pages.TabsPage"
+            xmlns:vm="clr-namespace:MauiTabbedDI.ViewModels"
+            xmlns:p="clr-namespace:MauiTabbedDI.Pages"
+            x:DataType="vm:TabsVm"
+            ItemsSource="{Binding Pages}">
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Command="{Binding RefreshCommand}" Text="Refresh" />
+    </TabbedPage.ToolbarItems>
+    
+    <TabbedPage.ItemTemplate>
+        <DataTemplate x:DataType="vm:LabelVm">
+            <p:LabelPage />
+        </DataTemplate>
+    </TabbedPage.ItemTemplate>
+
+</TabbedPage>
