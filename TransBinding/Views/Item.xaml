@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TransBinding.ViewModels"
+             x:Class="TransBinding.Views.Item"
+             x:DataType="vm:ItemVm">
+    <Frame CornerRadius="4" BorderColor="Black" Padding="4">
+        <Grid ColumnDefinitions="*,Auto,Auto,Auto">
+            <Label 
+                Text="{Binding Name}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" Grid.Column="0" />
+            <Label 
+                Text="{Binding Size}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" Grid.Column="1" />
+            <Switch IsToggled="{Binding Alive}" Grid.Column="2" />
+            <Button Text="Alert" Command="{Binding ItemSelectedCommand}" Grid.Column="3" />
+        </Grid>
+    </Frame>
+</ContentView>

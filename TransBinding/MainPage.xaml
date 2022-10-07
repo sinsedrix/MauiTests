@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:TransBinding.Views"
+             xmlns:vm="clr-namespace:TransBinding.ViewModels"
+             x:Class="TransBinding.MainPage"
+             x:DataType="vm:MainVm">
+
+    <Grid RowDefinitions="Auto,*"
+        Padding="30,0">
+
+        <VerticalStackLayout Grid.Row="0">
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Binding with children"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Frame Grid.Column="2" BorderColor="{StaticResource Primary}" HorizontalOptions="Center" Padding="0">
+                <HorizontalStackLayout BackgroundColor="Black" Spacing="2"
+                    RadioButtonGroup.GroupName="grpType" RadioButtonGroup.SelectedValue="{Binding SelectedSize}">
+
+                    <RadioButton x:Name="rbAlpha" Value="{Static vm:ItemSize.S}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
+                        <RadioButton.Content>
+                            <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton x:Name="rbBeta" Value="{Static vm:ItemSize.M}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
+                        <RadioButton.Content>
+                            <Label Text="M" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton x:Name="rbGamma" Value="{Static vm:ItemSize.L}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
+                        <RadioButton.Content>
+                            <Label Text="L" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </RadioButton.Content>
+                    </RadioButton>
+                </HorizontalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+        
+        <ScrollView Grid.Row="1">
+            <v:SelectorComponent
+                x:Name="CounterBtn"
+                ItemSelectedCommand="{Binding SelectItemCommand}"
+                ItemSize="{Binding SelectedSize}"/>
+        </ScrollView>
+    </Grid>
+    
+
+</ContentPage>
