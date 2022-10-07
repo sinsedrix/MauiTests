@@ -21,8 +21,8 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Frame Grid.Column="2" BorderColor="{StaticResource Primary}" HorizontalOptions="Center" Padding="0">
-                <HorizontalStackLayout BackgroundColor="Black" Spacing="2"
+            <Frame BorderColor="Black" HorizontalOptions="Center" Padding="0" Margin="2">
+                <HorizontalStackLayout BackgroundColor="Black" Spacing="1"
                     RadioButtonGroup.GroupName="grpType" RadioButtonGroup.SelectedValue="{Binding SelectedSize}">
 
                     <RadioButton x:Name="rbAlpha" Value="{Static vm:ItemSize.S}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
@@ -46,7 +46,6 @@
         
         <ScrollView Grid.Row="1">
             <v:SelectorComponent
-                x:Name="CounterBtn"
                 ItemSelectedCommand="{Binding SelectItemCommand}"
                 ItemSize="{Binding SelectedSize}"/>
         </ScrollView>

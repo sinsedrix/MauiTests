@@ -368,7 +368,7 @@
     </Style>
 
     <ControlTemplate x:Key="RadioSelectorTemplate">
-        <Border>
+        <Border StrokeThickness="0">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroupList>
                     <VisualStateGroup x:Name="CheckedStates">
