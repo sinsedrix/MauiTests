@@ -4,8 +4,8 @@
              xmlns:vm="clr-namespace:TransBinding.ViewModels"
              x:Class="TransBinding.Views.Item"
              x:DataType="vm:ItemVm">
-    <Frame CornerRadius="4" BorderColor="Black" Padding="4">
-        <Grid ColumnDefinitions="*,Auto,Auto,Auto">
+    <Frame CornerRadius="4" BorderColor="Black" Padding="4" HeightRequest="50">
+        <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto">
             <Label 
                 Text="{Binding Name}"
                 VerticalOptions="Center" 
@@ -15,7 +15,8 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" Grid.Column="1" />
             <Switch IsToggled="{Binding Alive}" Grid.Column="2" />
-            <Button Text="Alert" Command="{Binding ItemSelectedCommand}" Grid.Column="3" />
+            <Button Text="Alert Cmd" Command="{Binding ItemSelectedCommand}" Grid.Column="3" />
+            <Button Text="Alert Evt" Clicked="Button_Clicked" Grid.Column="4" />
         </Grid>
     </Frame>
 </ContentView>
