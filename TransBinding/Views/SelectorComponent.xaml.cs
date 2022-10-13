@@ -5,28 +5,37 @@ namespace TransBinding.Views;
 
 public partial class SelectorComponent : ContentView
 {
+    public SelectorComponentVm Vm => BindingContext as SelectorComponentVm;
+
     public ICommand ItemSelectedCommand
 	{
 		get => (ICommand)GetValue(ItemSelectedCommandProperty); 
-		set { SetValue(ItemSelectedCommandProperty, value); Vm.ItemSelectedCommand = value; }
+		set { SetValue(ItemSelectedCommandProperty, value); }
 	}
 
 	public ItemSize ItemSize
 	{
 		get => (ItemSize)GetValue(ItemSizeProperty);
-		set { SetValue(ItemSizeProperty, value); Vm.ItemSize = value; }
+		set { SetValue(ItemSizeProperty, value); }
 	}
-
-    public SelectorComponentVm Vm { get; }
 
 	public SelectorComponent()
 	{
 		InitializeComponent();
-
-        Vm = new SelectorComponentVm();
-		BindingContext = this;
+		BindingContext = new SelectorComponentVm();
     }
 
-	public static readonly BindableProperty ItemSelectedCommandProperty = BindableProperty.Create(nameof(ItemSelectedCommand), typeof(ICommand), typeof(SelectorComponent), null, BindingMode.TwoWay);
-    public static readonly BindableProperty ItemSizeProperty = BindableProperty.Create(nameof(ItemSize), typeof(ItemSize), typeof(SelectorComponent), ItemSize.M, BindingMode.TwoWay);
+	public static readonly BindableProperty ItemSelectedCommandProperty = BindableProperty.Create(nameof(ItemSelectedCommand), typeof(ICommand), typeof(SelectorComponent), null, BindingMode.TwoWay, propertyChanged: ItemSetectedCommandChanged);
+
+	public static readonly BindableProperty ItemSizeProperty = BindableProperty.Create(nameof(ItemSize), typeof(ItemSize), typeof(SelectorComponent), ItemSize.M, BindingMode.TwoWay, propertyChanged: ItemSizeChanged);
+
+	private static void ItemSizeChanged(BindableObject bindable, object oldValue, object newValue)
+	{
+		(bindable as SelectorComponent).Vm.ItemSize = (ItemSize)newValue;
+	}
+
+	private static void ItemSetectedCommandChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+        (bindable as SelectorComponent).Vm.ItemSize = (ItemSize)newValue;
+    }
 }

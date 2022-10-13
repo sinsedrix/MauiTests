@@ -4,9 +4,9 @@
              x:Class="TransBinding.Views.SelectorComponent"
              xmlns:v="clr-namespace:TransBinding.Views"
              xmlns:vm="clr-namespace:TransBinding.ViewModels"
-             x:DataType="v:SelectorComponent">
+             x:DataType="vm:SelectorComponentVm">
 
-    <CollectionView ItemsSource="{Binding Vm.Groups}">
+    <CollectionView ItemsSource="{Binding Groups}">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="vm:GroupVm">
                 <v:Group />
