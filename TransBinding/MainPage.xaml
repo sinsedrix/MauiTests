@@ -21,27 +21,12 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Frame BorderColor="Black" HorizontalOptions="Center" Padding="0" Margin="2">
-                <HorizontalStackLayout BackgroundColor="Black" Spacing="1"
-                    RadioButtonGroup.GroupName="grpType" RadioButtonGroup.SelectedValue="{Binding SelectedSize}">
+            <Label
+                Text="Pick a size:"
+                FontSize="18" />
 
-                    <RadioButton x:Name="rbAlpha" Value="{Static vm:ItemSize.S}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
-                        <RadioButton.Content>
-                            <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" />
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton x:Name="rbBeta" Value="{Static vm:ItemSize.M}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
-                        <RadioButton.Content>
-                            <Label Text="M" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton x:Name="rbGamma" Value="{Static vm:ItemSize.L}" ControlTemplate="{StaticResource RadioSelectorTemplate}" WidthRequest="50" HeightRequest="50">
-                        <RadioButton.Content>
-                            <Label Text="L" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                        </RadioButton.Content>
-                    </RadioButton>
-                </HorizontalStackLayout>
-            </Frame>
+            <Picker ItemsSource="{Binding Sizes}" SelectedItem="{Binding SelectedSize}" />
+            
         </VerticalStackLayout>
         
         <ScrollView Grid.Row="1">

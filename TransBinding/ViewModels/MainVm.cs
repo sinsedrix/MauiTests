@@ -8,6 +8,8 @@ namespace TransBinding.ViewModels
         [ObservableProperty]
         ItemSize selectedSize = ItemSize.M;
 
+        public List<ItemSize> Sizes { get; } = Enum.GetValues<ItemSize>().ToList();
+
         [RelayCommand]
         async Task SelectItemAsync(ItemVm item)
         {

@@ -31,11 +31,11 @@ public partial class SelectorComponent : ContentView
 
 	private static void ItemSizeChanged(BindableObject bindable, object oldValue, object newValue)
 	{
-		(bindable as SelectorComponent).Vm.ItemSize = (ItemSize)newValue;
+		(bindable as SelectorComponent).Vm.SetItemSize((ItemSize)newValue);
 	}
 
 	private static void ItemSetectedCommandChanged(BindableObject bindable, object oldValue, object newValue)
     {
-        (bindable as SelectorComponent).Vm.ItemSize = (ItemSize)newValue;
+        (bindable as SelectorComponent).Vm.SetItemSize((ItemSize)newValue);
     }
 }

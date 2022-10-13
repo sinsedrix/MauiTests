@@ -6,24 +6,18 @@ namespace TransBinding.ViewModels
 {
     public partial class SelectorComponentVm : ObservableObject
     {
-        public ItemSize ItemSize
+        public void SetItemSize(ItemSize size)
         {
-            set
-            {
-                foreach(var grp in Groups)
-                        foreach (var item in grp.Items)
-                            item.Size = value;
-            }
+            foreach(var grp in Groups)
+                    foreach (var item in grp.Items)
+                        item.Size = size;
         }
 
-        public ICommand ItemSelectedCommand
+        public void SetItemSelectedCommand(ICommand cmd)
         {
-            set
-            {
-                foreach (var grp in Groups)
-                        foreach (var item in grp.Items)
-                            item.ItemSelectedCommand = value;
-            }
+            foreach (var grp in Groups)
+                    foreach (var item in grp.Items)
+                        item.ItemSelectedCommand = cmd;
         }
 
         readonly Timer _timer;

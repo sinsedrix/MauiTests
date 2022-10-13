@@ -6,12 +6,11 @@
              xmlns:vm="clr-namespace:TransBinding.ViewModels"
              x:DataType="vm:SelectorComponentVm">
 
-    <CollectionView ItemsSource="{Binding Groups}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="vm:GroupVm">
-                <v:Group />
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-
+        <CollectionView ItemsSource="{Binding Groups}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="vm:GroupVm">
+                    <v:Group />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 </ContentView>
