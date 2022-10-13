@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -13,7 +14,7 @@ namespace TransBinding.ViewModels
                         item.Size = size;
         }
 
-        public void SetItemSelectedCommand(ICommand cmd)
+        public void SetItemSelectedCommand(IRelayCommand<object> cmd)
         {
             foreach (var grp in Groups)
                     foreach (var item in grp.Items)
@@ -23,9 +24,12 @@ namespace TransBinding.ViewModels
         readonly Timer _timer;
         public ObservableCollection<GroupVm> Groups { get; } = new();
 
+        [ObservableProperty]
+        bool isReady;
+
         public SelectorComponentVm()
         {
-            _timer = new Timer((s) => _ = RefreshAsync(), null, TimeSpan.FromSeconds(1), TimeSpan.FromMinutes(1));
+            _timer = new Timer((s) => _ = RefreshAsync(), null, TimeSpan.FromSeconds(1), TimeSpan.FromMinutes(5));
         }
 
         ~SelectorComponentVm() => _timer?.Dispose();
@@ -65,6 +69,8 @@ namespace TransBinding.ViewModels
                     new ItemVm { Name = "Boar" },
                 }
             });
+
+            IsReady = true;
         }
     }
 }

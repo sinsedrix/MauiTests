@@ -25,14 +25,16 @@
                 Text="Pick a size:"
                 FontSize="18" />
 
-            <Picker ItemsSource="{Binding Sizes}" SelectedItem="{Binding SelectedSize}" />
-            
+            <Picker ItemsSource="{Binding Sizes}" SelectedItem="{Binding SelectedSize}" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+
         </VerticalStackLayout>
         
         <ScrollView Grid.Row="1">
-            <v:SelectorComponent
+            <v:SelectorComponent x:Name="selector" />
+
+            <!--v:SelectorComponent x:Name="selector"
                 ItemSelectedCommand="{Binding SelectItemCommand}"
-                ItemSize="{Binding SelectedSize}"/>
+                ItemSize="{Binding SelectedSize}"/-->
         </ScrollView>
     </Grid>
     

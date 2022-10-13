@@ -15,7 +15,7 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" Grid.Column="1" />
             <Switch IsToggled="{Binding Alive}" Grid.Column="2" />
-            <Button Text="Alert Cmd" Command="{Binding ItemSelectedCommand}" Grid.Column="3" />
+            <Button Text="Alert Cmd" Command="{Binding ItemSelectedCommand}" CommandParameter="{Binding .}" Grid.Column="3" />
             <Button Text="Alert Evt" Clicked="Button_Clicked" Grid.Column="4" />
         </Grid>
     </Frame>

@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 using TransBinding.ViewModels;
 
@@ -7,35 +8,27 @@ public partial class SelectorComponent : ContentView
 {
     public SelectorComponentVm Vm => BindingContext as SelectorComponentVm;
 
-    public ICommand ItemSelectedCommand
+    public IRelayCommand<object> ItemSelectedCommand
 	{
-		get => (ICommand)GetValue(ItemSelectedCommandProperty); 
-		set { SetValue(ItemSelectedCommandProperty, value); }
+		get => (IRelayCommand<object>)GetValue(ItemSelectedCommandProperty); 
+		set { SetValue(ItemSelectedCommandProperty, value); Vm.SetItemSelectedCommand(value); }
 	}
 
 	public ItemSize ItemSize
 	{
 		get => (ItemSize)GetValue(ItemSizeProperty);
-		set { SetValue(ItemSizeProperty, value); }
+		set { SetValue(ItemSizeProperty, value); Vm.SetItemSize(value); }
 	}
 
-	public SelectorComponent()
+	public bool IsReady => Vm.IsReady;
+
+    public SelectorComponent()
 	{
 		InitializeComponent();
 		BindingContext = new SelectorComponentVm();
     }
 
-	public static readonly BindableProperty ItemSelectedCommandProperty = BindableProperty.Create(nameof(ItemSelectedCommand), typeof(ICommand), typeof(SelectorComponent), null, BindingMode.TwoWay, propertyChanged: ItemSetectedCommandChanged);
+	public static readonly BindableProperty ItemSelectedCommandProperty = BindableProperty.Create(nameof(ItemSelectedCommand), typeof(IRelayCommand<object>), typeof(SelectorComponent), null, BindingMode.OneWay);
 
-	public static readonly BindableProperty ItemSizeProperty = BindableProperty.Create(nameof(ItemSize), typeof(ItemSize), typeof(SelectorComponent), ItemSize.M, BindingMode.TwoWay, propertyChanged: ItemSizeChanged);
-
-	private static void ItemSizeChanged(BindableObject bindable, object oldValue, object newValue)
-	{
-		(bindable as SelectorComponent).Vm.SetItemSize((ItemSize)newValue);
-	}
-
-	private static void ItemSetectedCommandChanged(BindableObject bindable, object oldValue, object newValue)
-    {
-        (bindable as SelectorComponent).Vm.SetItemSize((ItemSize)newValue);
-    }
+    public static readonly BindableProperty ItemSizeProperty = BindableProperty.Create(nameof(ItemSize), typeof(ItemSize), typeof(SelectorComponent), ItemSize.M, BindingMode.OneWay);
 }

@@ -1,19 +1,31 @@
-﻿using TransBinding.ViewModels;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using TransBinding.ViewModels;
 
 namespace TransBinding
 {
     public partial class MainPage : ContentPage
     {
+        public MainVm Vm => BindingContext as MainVm;
+
         public MainPage(MainVm vm)
         {
             InitializeComponent();
             BindingContext = vm;
         }
 
-        //public MainPage()
-        //{
-        //    InitializeComponent();
-        //}
+        private async void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var waitTask = Task.Run(async () =>
+            {
+                while (!selector.IsReady) await Task.Delay(25);
+            });
 
+            if (waitTask != await Task.WhenAny(waitTask, Task.Delay(-1)))
+                throw new TimeoutException();
+            
+            selector.ItemSize = Vm.SelectedSize;
+            selector.ItemSelectedCommand = Vm.SelectItemCommand;
+        }
     }
 }

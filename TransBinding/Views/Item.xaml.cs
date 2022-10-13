@@ -5,6 +5,8 @@ namespace TransBinding.Views;
 
 public partial class Item : ContentView
 {
+	public ItemVm Vm => BindingContext as ItemVm;
+
     public Item()
 	{
 		InitializeComponent();
@@ -12,6 +14,6 @@ public partial class Item : ContentView
 
 	private void Button_Clicked(object sender, EventArgs e)
 	{
-		(BindingContext as ItemVm).ItemSelectedCommand?.Execute(null);
+		Vm.ItemSelectedCommand?.Execute(Vm);
     }
 }

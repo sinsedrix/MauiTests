@@ -1,5 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Input;
+using Windows.Foundation.Metadata;
 
 namespace TransBinding.ViewModels
 {
@@ -20,6 +23,15 @@ namespace TransBinding.ViewModels
 
     public enum ItemSize
     {
-        XS, S, M, L, XL
+        [Description("Extra Small")]
+        XS,
+        [Description("Small")]
+        S,
+        [Description("Medium")]
+        M,
+        [Description("Large")]
+        L,
+        [Description("Extra Large")]
+        XL
     }
 }
