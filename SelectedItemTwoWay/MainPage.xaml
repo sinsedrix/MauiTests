@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SelectedItemTwoWay"
+             xmlns:v="clr-namespace:SelectedItemTwoWay"
+             x:Class="SelectedItemTwoWay.MainPage"
+             x:DataType="vm:MainVm">
+
+    <Grid ColumnDefinitions="50*,50*" ColumnSpacing="4">
+
+        <Grid Grid.Column="0">
+
+            <CollectionView ItemsSource="{Binding Items1}" SelectedItem="{Binding SelectedItem1}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:ItemVm">
+                        <v:SelectableItemView />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <Grid Grid.Column="1">
+
+            <CollectionView ItemsSource="{Binding Items2}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:ItemVm">
+                        <Button Command="{Binding SelectItemCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" Text="{Binding ItemLabel}"
+                                CommandParameter="{Binding ItemLabel}"
+                                WidthRequest="100" HeightRequest="40"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        
+    </Grid>
+
+</ContentPage>
