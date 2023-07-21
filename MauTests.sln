@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiRadioTemplate", "MauiRa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransBinding", "TransBinding\TransBinding.csproj", "{F6B06E54-89B6-44BC-B0D6-9C2C81249DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectedItemTwoWay", "SelectedItemTwoWay\SelectedItemTwoWay.csproj", "{8B450328-702F-46F7-BA0E-EC1267C50593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectedItemTwoWay", "SelectedItemTwoWay\SelectedItemTwoWay.csproj", "{8B450328-702F-46F7-BA0E-EC1267C50593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swipe", "Swipe\Swipe.csproj", "{02ED7113-0129-47B0-8003-356D73EABC79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +154,24 @@ Global
 		{8B450328-702F-46F7-BA0E-EC1267C50593}.Release|x86.ActiveCfg = Release|Any CPU
 		{8B450328-702F-46F7-BA0E-EC1267C50593}.Release|x86.Build.0 = Release|Any CPU
 		{8B450328-702F-46F7-BA0E-EC1267C50593}.Release|x86.Deploy.0 = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|x64.Build.0 = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|x86.Build.0 = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|x64.ActiveCfg = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|x64.Build.0 = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|x64.Deploy.0 = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|x86.ActiveCfg = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|x86.Build.0 = Release|Any CPU
+		{02ED7113-0129-47B0-8003-356D73EABC79}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
