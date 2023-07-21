@@ -1,31 +1,30 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 
-namespace MauiAbsoluteCollection.ViewModels
+namespace MauiAbsoluteCollection.ViewModels;
+
+public partial class AbsoluteListVm : ObservableObject
 {
-    public partial class AbsoluteListVm : ObservableObject
+    public ObservableCollection<AbsoluteVm> Bunch { get; } = new();
+
+    private static readonly Random random = new();
+
+    public static string RandomString(int length)
     {
-        public ObservableCollection<AbsoluteVm> Bunch { get; } = new();
+        const string chars = "abcdefghijklmnopqrstuvwxyz ";
+        return new string(Enumerable.Repeat(chars, length)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
 
-        private static readonly Random random = new();
-
-        public static string RandomString(int length)
+    public AbsoluteListVm() {
+        for (int i = 0; i < 20; i++)
         {
-            const string chars = "abcdefghijklmnopqrstuvwxyz ";
-            return new string(Enumerable.Repeat(chars, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        public AbsoluteListVm() {
-            for (int i = 0; i < 20; i++)
+            Bunch.Add(new AbsoluteVm
             {
-                Bunch.Add(new AbsoluteVm
-                {
-                    X = (int)new Random().NextInt64(800),
-                    Y = (int)new Random().NextInt64(600),
-                    Label = RandomString(8)
-                });
-            }
+                X = (int)new Random().NextInt64(800),
+                Y = (int)new Random().NextInt64(600),
+                Label = RandomString(8)
+            });
         }
     }
 }

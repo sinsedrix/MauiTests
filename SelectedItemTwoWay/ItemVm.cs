@@ -1,10 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace SelectedItemTwoWay
+namespace SelectedItemTwoWay;
+
+public partial class ItemVm : ObservableObject
 {
-    public partial class ItemVm : ObservableObject
-    {
-        [ObservableProperty]
-        string itemLabel;
-    }
+    [ObservableProperty]
+    string itemLabel;
 }

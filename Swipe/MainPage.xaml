@@ -8,51 +8,189 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <DataTemplate x:Key="evenTemplate">
-                <v:Line Margin="0,1,0,0" ItemColor="{StaticResource Gray500}" />
+            
+            <DataTemplate x:Key="evenTemplate" x:DataType="vm:LineVm">
+                <SwipeView>
+                    <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray500}" />
+
+                    <SwipeView.RightItems>
+                        <SwipeItems>
+                            <SwipeItem Text="+" BackgroundColor="Green" Command="{Binding LinePlusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                            <SwipeItem Text="-" BackgroundColor="Orange" Command="{Binding LineMinusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+                </SwipeView>
             </DataTemplate>
-            <DataTemplate x:Key="oddTemplate">
-                <v:Line Margin="0,1,0,0" ItemColor="{StaticResource Gray600}" />
+            <DataTemplate x:Key="oddTemplate" x:DataType="vm:LineVm">
+                <SwipeView>
+                    <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray600}" />
+
+                    <SwipeView.RightItems>
+                        <SwipeItems>
+                            <SwipeItem Text="+" BackgroundColor="Green" Command="{Binding LinePlusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                            <SwipeItem Text="-" BackgroundColor="Orange" Command="{Binding LineMinusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+                </SwipeView>
             </DataTemplate>
 
             <v:ParityTemplateSelector x:TypeArguments="vm:LineVm" x:Key="alternateTemplateSelector"
                 EvenTemplate="{StaticResource evenTemplate}"
                 OddTemplate="{StaticResource oddTemplate}" />
-
-            <DataTemplate x:Key="safeEvenTemplate">
-                <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray500}" />
-            </DataTemplate>
-            <DataTemplate x:Key="safeOddTemplate">
-                <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray600}" />
-            </DataTemplate>
-            
-            <v:ParityTemplateSelector x:TypeArguments="vm:LineVm" x:Key="safeAlternateTemplateSelector"
-                EvenTemplate="{StaticResource safeEvenTemplate}"
-                OddTemplate="{StaticResource safeOddTemplate}" />
-
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
-            Padding="30,0"
+            Padding="10,0"
             VerticalOptions="Center">
 
             <Label
-                Text="Hello, World!"
+                Text="Swipe test"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
+            <Grid ColumnDefinitions="50*,50*" ColumnSpacing="4">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label x:Name="LblNone"
+                        Text="Line collection NONE"
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+
+                    <CollectionView ItemsSource="{Binding Lines}" ItemTemplate="{StaticResource alternateTemplateSelector}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1">
+                    <Label x:Name="LblTap"
+                        Text="Line collection TAP"
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+
+                    <CollectionView ItemsSource="{Binding Lines}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <SwipeView.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </SwipeView.GestureRecognizers>
+                                    <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray600}" />
+
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="+" BackgroundColor="Green" Command="{Binding LinePlusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                                            <SwipeItem Text="-" BackgroundColor="Orange" Command="{Binding LineMinusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Grid>
+
+
+            <Grid ColumnDefinitions="50*,50*" ColumnSpacing="4">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label x:Name="LblDrag"
+                        Text="Line collection DRAG"
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+
+                    <CollectionView ItemsSource="{Binding Lines}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <SwipeView.GestureRecognizers>
+                                        <DragGestureRecognizer DragStarting="DragGestureRecognizer_DragStarting" />
+                                    </SwipeView.GestureRecognizers>
+                                    <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray600}" />
+
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="+" BackgroundColor="Green" Command="{Binding LinePlusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                                            <SwipeItem Text="-" BackgroundColor="Orange" Command="{Binding LineMinusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1">
+                    <Label x:Name="LblClick"
+                        Text="Line collection CLICK"
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+
+                    <CollectionView ItemsSource="{Binding Lines}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <SwipeView.GestureRecognizers>
+                                        <ClickGestureRecognizer Clicked="ClickGestureRecognizer_Clicked" />
+                                    </SwipeView.GestureRecognizers>
+                                    <v:Line Margin="0,1,0,0" BackgroundColor="{StaticResource Gray600}" />
+
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="+" BackgroundColor="Green" Command="{Binding LinePlusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                                            <SwipeItem Text="-" BackgroundColor="Orange" Command="{Binding LineMinusCommand, Source={RelativeSource AncestorType={x:Type vm:MainVm}}}" CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Grid>
+
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                Text="Single line NONE"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <CollectionView ItemsSource="{Binding Lines}" ItemTemplate="{StaticResource safeAlternateTemplateSelector}" />
+            <SwipeView x:Name="sv1">
+                <v:Line BindingContext="{Binding FirstLine}" HeightRequest="40" ItemColor="Gray" />
+
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem Text="+" BackgroundColor="Green" />
+                        <SwipeItem Text="-" BackgroundColor="Orange" />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+            </SwipeView>
+
+        
+            <Label
+                Text="Single component TAP"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <SwipeView x:Name="sv2">
+                <SwipeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </SwipeView.GestureRecognizers>
+                <Grid BackgroundColor="Grey" HeightRequest="40" ColumnDefinitions="10*,60*,30*" ColumnSpacing="4">
+                    <Label Text="{Binding FirstLine.Quantity}" Padding="4" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="0" />
+                    <Label Text="{Binding FirstLine.Description}" Padding="4" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" />
+                    <Label Text="{Binding FirstLine.Price, StringFormat='{0:C2}'}" Padding="4" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="2" />
+                </Grid>
+
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem Text="+" BackgroundColor="Green" />
+                        <SwipeItem Text="-" BackgroundColor="Orange" />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+            </SwipeView>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                <Button x:Name="BtnOpen" Text="Open" Clicked="BtnOpen_Clicked" />
+                <Button x:Name="BtnClose" Text="Close" Clicked="BtnClose_Clicked" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

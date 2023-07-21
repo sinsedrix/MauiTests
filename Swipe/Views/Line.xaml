@@ -6,31 +6,10 @@
              x:DataType="vm:LineVm"
              x:Name="me">
 
-    <SwipeView x:Name="sv">
-        <SwipeView.GestureRecognizers>
-            <ClickGestureRecognizer Clicked="ClickGestureRecognizer_Clicked" />
-        </SwipeView.GestureRecognizers>
-        
-        <Grid BackgroundColor="{Binding ItemColor, Source={x:Reference me}}" HeightRequest="40" ColumnDefinitions="10*,80*,10*">
-            <Border Grid.Column="0">
-                <Label Text="{Binding Id}" HorizontalOptions="End" VerticalOptions="Center" />
-            </Border>
-            <Border Grid.Column="1">
-                <Label Text="{Binding Description}" HorizontalOptions="Start" VerticalOptions="Center" />
-            </Border>
-            <Border Grid.Column="2">
-                <Label Text="{Binding Price, StringFormat='{0:C2}'}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-            </Border>
+        <Grid BackgroundColor="{Binding ItemColor, Source={x:Reference me}}" HeightRequest="40" ColumnDefinitions="10*,60*,30*" ColumnSpacing="4">
+            <Label Text="{Binding Quantity}" Padding="4" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="0" />
+            <Label Text="{Binding Description}" Padding="4" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" />
+            <Label Text="{Binding Price, StringFormat='{0:C2}'}" Padding="4" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="2" />
         </Grid>
-
-        <!--#region -->
-        <SwipeView.RightItems>
-            <SwipeItems>
-                <SwipeItem Text="+" BackgroundColor="Green" />
-                <SwipeItem Text="-" BackgroundColor="Orange" />
-            </SwipeItems>
-        </SwipeView.RightItems>
-        <!--#endregion-->
-    </SwipeView>
     
 </ContentView>

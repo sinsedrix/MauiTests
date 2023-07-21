@@ -1,5 +1,4 @@
 using CommunityToolkit.Mvvm.Input;
-using System.Windows.Input;
 using TransBinding.ViewModels;
 
 namespace TransBinding.Views;

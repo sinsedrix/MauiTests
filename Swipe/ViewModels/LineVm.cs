@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Swipe.ViewModels
 {
-    public class LineVm
+    public partial class LineVm : ObservableObject
     {
-        public string Id { get; set; }
-        public string Description { get; set; }
+        [ObservableProperty]
+        int quantity;
 
-        public double Price { get; set; }
+        [ObservableProperty]
+        string description;
+
+        [ObservableProperty]
+        double price;
 
     }
 }

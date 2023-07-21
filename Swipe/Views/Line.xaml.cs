@@ -15,9 +15,4 @@ public partial class Line : ContentView
 
     public static readonly BindableProperty ItemColorProperty =
         BindableProperty.Create(nameof(ItemColor), typeof(Color), typeof(Line));
-
-    private void ClickGestureRecognizer_Clicked(object sender, EventArgs e)
-    {
-        sv.Open(OpenSwipeItem.RightItems);
-    }
 }
