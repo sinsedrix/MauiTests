@@ -49,9 +49,9 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 
-		<PackageReference Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'" Include="Microsoft.WindowsAppSDK" Version="1.1.5" />
+		<PackageReference Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'" Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
 	</ItemGroup>
 
 </Project>
