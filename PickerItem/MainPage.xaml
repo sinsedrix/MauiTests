@@ -31,7 +31,8 @@
                 HorizontalOptions="Center" />
 
             <VerticalStackLayout>
-                <local:PickerItem Text="Pick a choice" ItemsSource="{Binding Choices}" SelectedItem="{Binding SelectedChoice}" ItemDisplayBinding="{Binding Name}" />
+                <local:PickerItem Text="Pick a choice" ItemsSource="{Binding Choices}" SelectedItem="{Binding SelectedChoice}" ItemDisplayBinding="{Binding Name}"
+                                  Icon="two_dice_icon.png" />
                 <Picker ItemsSource="{Binding Choices}" SelectedItem="{Binding SelectedChoice}" ItemDisplayBinding="{Binding Name}" />
             </VerticalStackLayout>
 
