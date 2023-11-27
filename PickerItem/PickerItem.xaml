@@ -8,18 +8,18 @@
     <Frame HeightRequest="50" CornerRadius="6" Padding="4" Margin="2,2,2,0"
            BackgroundColor="{StaticResource Tertiary}" BorderColor="{StaticResource Secondary}">
 
-        <Grid>
+        <Grid BackgroundColor="{StaticResource Primary}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Source="{Binding Icon}" Margin="4" />
-            <Label x:Name="LblText" Text="{Binding Text}" Grid.Column="1" TextColor="{StaticResource White}" FontSize="16" VerticalTextAlignment="Center" />
-            <Picker x:Name="InnerPicker" Grid.Column="2" 
-                    ItemsSource="{Binding ItemsSource}"
-                    SelectedItem="{Binding SelectedItem}" 
-                    WidthRequest="400" />
+            <Image Grid.Column="0" Source="{Binding Icon, Source={x:Reference me}}" Margin="4" />
+            <Label x:Name="LblText" Text="{Binding Text, Source={x:Reference me}}" Grid.Column="1" TextColor="{StaticResource White}" FontSize="16" VerticalTextAlignment="Center" />
+            <Picker x:Name="InnerPicker" Grid.Column="2" Margin="4"
+                    ItemsSource="{Binding ItemsSource, Source={x:Reference me}}"
+                    SelectedItem="{Binding SelectedItem, Source={x:Reference me}}" 
+                    WidthRequest="300" HeightRequest="40" Background="{StaticResource Secondary}" TextColor="Black" />
         </Grid>
     </Frame>
 

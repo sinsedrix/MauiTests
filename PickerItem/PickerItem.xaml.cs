@@ -8,19 +8,19 @@ public partial class PickerItem : ContentView
     public ImageSource Icon
     {
         get => (ImageSource)GetValue(IconProperty);
-        set { SetValue(IconProperty, value); }
+        set => SetValue(IconProperty, value);
     }
 
     public string Text
     {
         get => (string)GetValue(TextProperty);
-        set { SetValue(TextProperty, value); }
+        set => SetValue(TextProperty, value);
     }
 
     public IList ItemsSource
     {
         get => (IList)GetValue(ItemsSourceProperty);
-        set { SetValue (ItemsSourceProperty, value); }
+        set { SetValue (ItemsSourceProperty, value); OnPropertyChanged(nameof(ItemDisplayBinding)); }
     }
 
     public object SelectedItem
@@ -38,7 +38,7 @@ public partial class PickerItem : ContentView
     public PickerItem()
     {
         InitializeComponent();
-        BindingContext = this;
+        //BindingContext = this;
     }
 
     public static readonly BindableProperty TextProperty =
@@ -47,11 +47,13 @@ public partial class PickerItem : ContentView
     public static readonly BindableProperty IconProperty =
      BindableProperty.Create(nameof(Icon), typeof(ImageSource), typeof(PickerItem));
 
-
     public static readonly BindableProperty ItemsSourceProperty =
-        BindableProperty.Create(nameof(ItemsSource), typeof(IList), typeof(PickerItem));
+            BindableProperty.Create(nameof(ItemsSource), typeof(IList), typeof(PickerItem), default(IList));
+
+    //public static readonly BindableProperty ItemDisplayBindingProperty =
+    //        BindableProperty.Create(nameof(ItemDisplayBinding), typeof(BindingBase), typeof(PickerItem));
 
     public static readonly BindableProperty SelectedItemProperty =
-     BindableProperty.Create(nameof(SelectedItem), typeof(object), typeof(PickerItem));
+        BindableProperty.Create(nameof(SelectedItem), typeof(object), typeof(PickerItem), null, BindingMode.TwoWay);
 
 }

@@ -10,8 +10,27 @@ namespace PickerItem
 
         public ObservableCollection<Choice> Choices { get; } = new();
 
+        [ObservableProperty]
+        string selectedStrChoice;
+        public ObservableCollection<string> StrChoices { get; } = new();
+
         public MainVm() 
         {
+            string[] strChoices = new string[]
+            {
+                "First",
+                "Second",
+                "Third",
+                "Fourth",
+                "Fifth",
+                "Sixth"
+            };
+            foreach (string choice in strChoices)
+            {
+                StrChoices.Add(choice);
+            }
+            SelectedStrChoice = StrChoices.First();
+
             Choice[] choices = new Choice[]
             {
                 new() { Id = 1, Name = "First" },
