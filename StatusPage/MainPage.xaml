@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StatusPage.MainPage"
+             xmlns:local="clr-namespace:StatusPage"
+             x:DataType="local:MainVm">
+
+    <Grid RowDefinitions="*,Auto">
+        <ScrollView>
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center">
+
+                <Image
+                    Source="dotnet_bot.png"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                    HeightRequest="200"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="Hello, World!"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius vitae eros ac imperdiet. Phasellus sit amet erat at mi tincidunt blandit. In mauris dolor, faucibus in suscipit sed, commodo vel neque. Duis elementum ac velit sed finibus. Curabitur ut ultrices diam, at ullamcorper enim. Mauris a ornare ex. Morbi posuere, turpis et semper sagittis, arcu ligula vehicula felis, sed fringilla libero diam elementum nulla. Nulla nec ultrices massa. Donec eget dignissim nunc, a varius sapien. Vestibulum mollis massa sed cursus pharetra. Phasellus porttitor aliquam velit semper blandit. In fermentum leo sem, vitae rutrum neque elementum eu. Nunc tortor erat, bibendum aliquam justo vel, posuere suscipit augue." />
+
+                <Label
+                    Text="Donec iaculis, diam id eleifend consequat, ipsum justo sagittis erat, accumsan tristique risus diam id libero. Vivamus venenatis vulputate fringilla. Morbi faucibus leo in justo egestas, non feugiat lorem maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut urna mauris, convallis in bibendum eu, auctor vitae est. Praesent sit amet dignissim lectus. Phasellus non arcu dignissim, commodo dolor in, hendrerit eros. Aenean vel sagittis magna, a eleifend urna. Nullam non nulla in urna tincidunt posuere sodales eget lacus. Aliquam sed facilisis est, et facilisis purus." />
+
+                <Label
+                    Text="Phasellus molestie bibendum pulvinar. Vivamus finibus velit ipsum, a consectetur ipsum hendrerit nec. Sed risus felis, condimentum sed mattis et, pretium at erat. Quisque facilisis nisl turpis. Mauris aliquam elementum consequat. Sed iaculis non odio eget tempor. Etiam tincidunt velit eros, a feugiat tellus viverra a. Sed maximus condimentum tellus, eu mattis lectus varius in. Aenean pulvinar dignissim erat id ultricies. Nam sed nulla elementum, mattis odio a, semper augue." />
+
+                <Label
+                    Text="Integer semper, magna eget fringilla volutpat, odio mauris efficitur nulla, sed auctor turpis justo non nunc. Donec vulputate enim ipsum, non convallis erat accumsan ac. Ut suscipit vehicula elit, sed tempor risus ultricies quis. Aenean et sapien ut tortor aliquet varius ultricies vitae justo. Integer quam turpis, euismod vel sollicitudin vitae, consequat a purus. Nulla dictum porttitor dolor sit amet bibendum. Nam in lacus sed libero posuere cursus. Curabitur pulvinar nunc pellentesque mi commodo, ac molestie lorem interdum. In bibendum augue ac eros scelerisque, non luctus odio sodales. Etiam finibus, mauris vel vehicula sagittis, velit odio bibendum ex, nec pharetra mi lorem fringilla nunc. Aenean auctor, purus non luctus facilisis, odio mi sollicitudin nibh, at bibendum libero ante vel augue." />
+
+                <Label
+                    Text="Vivamus vel aliquet ipsum. Vivamus vel vehicula lacus, ut tincidunt mauris. Duis ultrices convallis urna eu efficitur. Ut congue iaculis urna non rhoncus. Donec vestibulum ante id nisl sodales, in suscipit arcu tempus. Mauris eget magna eget lacus viverra aliquam. Nunc vitae sodales erat, sed consectetur mauris. Nam eget sapien purus." />
+                
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <local:StatusBar BindingContext="{Binding Status}" Grid.Row="1" BackgroundColor="{StaticResource Primary}" />
+    </Grid>
+</ContentPage>
