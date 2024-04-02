@@ -19,7 +19,7 @@ namespace Modal.ViewModels
         {
             ChoiceVm c = await Shell.Current.GetModalResultAsync<ChoiceSelector, ChoiceVm>();
 
-            ChosenFruit = c.Description;
+            ChosenFruit = c?.Description;
         }
     }
 

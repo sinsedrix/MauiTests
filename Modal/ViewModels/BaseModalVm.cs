@@ -4,7 +4,7 @@ namespace Modal.ViewModels
 {
     public class BaseModalVm<T> : ObservableObject
     {
-        public Action<T> SelectAction { get; set; }
+        public Action<T> SelectAction { get; private set; }
 
         public async Task<T> GetResultAsync()
         {
