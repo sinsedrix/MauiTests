@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swipe", "Swipe\Swipe.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickerItem", "PickerItem\PickerItem.csproj", "{3F09EAA8-82E8-4A22-BBA9-4F53D5B327AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusPage", "StatusPage\StatusPage.csproj", "{9F286041-1B99-434F-84FB-788CE68FEF6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatusPage", "StatusPage\StatusPage.csproj", "{9F286041-1B99-434F-84FB-788CE68FEF6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modal", "Modal\Modal.csproj", "{DB442979-AF17-41D9-93DE-6B3902439483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -212,6 +214,24 @@ Global
 		{9F286041-1B99-434F-84FB-788CE68FEF6A}.Release|x86.ActiveCfg = Release|Any CPU
 		{9F286041-1B99-434F-84FB-788CE68FEF6A}.Release|x86.Build.0 = Release|Any CPU
 		{9F286041-1B99-434F-84FB-788CE68FEF6A}.Release|x86.Deploy.0 = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|x64.Build.0 = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|x86.Build.0 = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x64.ActiveCfg = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x64.Build.0 = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x64.Deploy.0 = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x86.ActiveCfg = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x86.Build.0 = Release|Any CPU
+		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

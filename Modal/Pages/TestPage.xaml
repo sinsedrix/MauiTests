@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Modal.ViewModels"
+             x:Class="Modal.Pages.TestPage"
+             Title="NewPage1"
+             x:DataType="vm:TestVm">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="This is a test page"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry Text="{Binding ChosenFruit}" IsReadOnly="True" />
+        <Button
+                Text="Go to choice page"
+                Command="{Binding GoToChoicePageCommand}"
+                HorizontalOptions="Fill" />
+        
+    </VerticalStackLayout>
+</ContentPage>

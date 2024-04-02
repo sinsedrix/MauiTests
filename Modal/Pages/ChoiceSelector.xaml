@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Modal.ViewModels"
+             xmlns:vu="clr-namespace:Modal.Views"
+             x:Class="Modal.Pages.ChoiceSelector"
+             Title="ChoiceSelector"
+             x:DataType="vm:ChoiceSelectorVm"
+             WidthRequest="400"
+             HeightRequest="500">
+
+    <Grid RowDefinitions="60,*,Auto">
+        <Grid BackgroundColor="{StaticResource Primary}" Padding="20">
+
+            <Label Text="Choice selector" />
+        </Grid>
+
+        <ScrollView  Grid.Row="1" Padding="10">
+            <CollectionView ItemsSource="{Binding Choices}" SelectionMode="Single" SelectedItem="{Binding SelectedChoice}" SelectionChangedCommand="{Binding SelectCommand}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:ChoiceVm">
+                        <vu:ChoiceLine Padding="8" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+        <HorizontalStackLayout Grid.Row="2" Padding="10" HorizontalOptions="Center">
+            <Button Text="Annuler" Style="{StaticResource CancelButton}" Command="{Binding CancelCommand}"
+                Margin="4" WidthRequest="80" HeightRequest="50" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
