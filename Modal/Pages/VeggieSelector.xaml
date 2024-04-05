@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Modal.ViewModels"
              xmlns:vu="clr-namespace:Modal.Views"
-             x:Class="Modal.Pages.ChoiceSelector"
-             Title="ChoiceSelector"
-             x:DataType="vm:ChoiceSelectorVm"
+             x:Class="Modal.Pages.VeggieSelector"
+             Title="VeggieSelector"
+             x:DataType="vm:VeggieSelectorVm"
              WidthRequest="400"
              HeightRequest="500">
 
     <Grid RowDefinitions="60,*,Auto">
         <Grid BackgroundColor="{StaticResource Primary}" Padding="20">
 
-            <Label Text="Choice selector" />
+            <Label Text="Veggie selector" />
         </Grid>
 
         <ScrollView  Grid.Row="1" Padding="10">
-            <CollectionView ItemsSource="{Binding Choices}" SelectionMode="Single" SelectedItem="{Binding SelectedChoice}" SelectionChangedCommand="{Binding SelectCommand}">
+            <CollectionView ItemsSource="{Binding Veggies}" SelectionMode="Single" SelectedItem="{Binding SelectedValue}" SelectionChangedCommand="{Binding SelectCommand}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="vm:ChoiceVm">
                         <vu:ChoiceLine Padding="8" />

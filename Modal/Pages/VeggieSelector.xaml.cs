@@ -2,9 +2,9 @@ using Modal.ViewModels;
 
 namespace Modal.Pages;
 
-public partial class ChoiceSelector : ContentPage
+public partial class VeggieSelector : ContentPage
 {
-	public ChoiceSelector(ChoiceSelectorVm vm)
+	public VeggieSelector(VeggieSelectorVm vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

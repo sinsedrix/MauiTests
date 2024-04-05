@@ -14,9 +14,15 @@
 
         <Entry Text="{Binding ChosenFruit}" IsReadOnly="True" />
         <Button
-                Text="Go to choice page"
-                Command="{Binding GoToChoicePageCommand}"
+                Text="Go to fruit page"
+                Command="{Binding GoToFruitPageCommand}"
                 HorizontalOptions="Fill" />
-        
+
+        <Entry Text="{Binding ChosenVeggie}" IsReadOnly="True" />
+        <Button
+                Text="Go to veggie page"
+                Command="{Binding GoToVeggiePageCommand}"
+                HorizontalOptions="Fill" />
+
     </VerticalStackLayout>
 </ContentPage>

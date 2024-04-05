@@ -27,9 +27,13 @@ namespace Modal
             builder.Services.AddSingleton<TestPage>();
             builder.Services.AddSingleton<TestVm>();
 
-            Routing.RegisterRoute(nameof(ChoiceSelector), typeof(ChoiceSelector));
-            builder.Services.AddSingleton<ChoiceSelector>();
-            builder.Services.AddSingleton<ChoiceSelectorVm>();
+            Routing.RegisterRoute(nameof(FruitSelector), typeof(FruitSelector));
+            builder.Services.AddTransient<FruitSelector>();
+            builder.Services.AddTransient<FruitSelectorVm>();
+
+            Routing.RegisterRoute(nameof(VeggieSelector), typeof(VeggieSelector));
+            builder.Services.AddTransient<VeggieSelector>();
+            builder.Services.AddTransient<VeggieSelectorVm>();
 
 #if DEBUG
             builder.Logging.AddDebug();

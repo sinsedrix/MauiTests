@@ -69,13 +69,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\VeggieSelector.xaml.cs">
+	    <DependentUpon>VeggieSelector.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\FruitSelector.xaml.cs">
+	    <DependentUpon>FruitSelector.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\TestPage.xaml.cs">
 	    <DependentUpon>TestPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\ChoiceSelector.xaml">
+	  <MauiXaml Update="Pages\VeggieSelector.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\FruitSelector.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ChoiceLine.xaml">
