@@ -10,18 +10,22 @@ namespace Modal
             await shell.GoToAsync(typeof(T).Name + q);
         }
 
-        public static async Task<TR> GetModalResultAsync<TP, TR>(this Shell shell) where TP : Page
+        public static async Task<TR> GetModalResultAsync<TP, TR>(this Shell shell, TR initVal = default) where TP : Page
         {
             Page page = App.Current.Container.GetService<TP>();
-            await shell.Navigation.PushModalAsync(page);
             BaseModalVm<TR> vm = page.BindingContext as BaseModalVm<TR>;
+            vm.SelectedValue = initVal;
+
+            await shell.Navigation.PushModalAsync(page);
+
+            vm.Selected += async (s, e) => await shell.PopModalAsync();
 
             return await vm.GetResultAsync();
         }
 
         public static async Task PopModalAsync(this Shell shell, bool animated = false)
         {
-            await shell.Navigation.PopModalAsync(); // animated
+            await shell.Navigation.PopModalAsync(animated);
         }
     }
 }

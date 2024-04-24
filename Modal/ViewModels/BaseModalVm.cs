@@ -8,33 +8,29 @@ namespace Modal.ViewModels
         [ObservableProperty]
         T selectedValue;
 
-        public Action<T> SelectAction { get; private set; }
+        public event EventHandler<T> Selected;
+        private TaskCompletionSource<T> taskCompletionSource;
 
         public async Task<T> GetResultAsync()
         {
-            var tcs = new TaskCompletionSource<T>();
+            taskCompletionSource = new TaskCompletionSource<T>();
 
-            SelectAction = async (result) =>
-            {
-                SelectedValue = result;
-                tcs.SetResult(result); // Définit le résultat de la tâche
-                await Shell.Current.PopModalAsync(); // Ferme la page modale
-            };
-
-            return await tcs.Task; // Attendez que la tâche soit terminée et renvoyez le résultat
+            return await taskCompletionSource.Task;
         }
 
         [RelayCommand]
         void Select()
         {
-            SelectAction?.Invoke(SelectedValue);
+            Selected?.Invoke(this, SelectedValue);
+            taskCompletionSource.SetResult(SelectedValue);
         }
 
 
         [RelayCommand]
         void Cancel()
         {
-            SelectAction?.Invoke(default);
+            Selected?.Invoke(this, default);
+            taskCompletionSource.SetResult(default);
         }
     }
 
