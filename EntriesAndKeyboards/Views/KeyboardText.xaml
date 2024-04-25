@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntriesAndKeyboards.Views.KeyboardText"
+             xmlns:vu="clr-namespace:EntriesAndKeyboards.Views"
+             x:DataType="vu:KeyboardText">
+
+    <Grid
+        ColumnDefinitions="Auto,Auto"
+        RowDefinitions="20*,20*,20*,20*,20*"
+        RowSpacing="4" ColumnSpacing="4" Margin="4">
+
+        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              RowDefinitions="25*,25*,25*,25*"
+              ColumnSpacing="2"
+              RowSpacing="2"
+              x:Name="lowerKbGrid"
+              Grid.RowSpan="4">
+        </Grid>
+
+        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              RowDefinitions="25*,25*,25*,25*"
+              ColumnSpacing="2"
+              RowSpacing="2"
+              x:Name="upperKbGrid"
+              Grid.RowSpan="4">
+        </Grid>
+
+        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              RowDefinitions="25*,25*,25*,25*"
+              ColumnSpacing="2"
+              RowSpacing="2"
+              x:Name="specialKbGrid"
+              Grid.RowSpan="4">
+        </Grid>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="1"
+            Style="{StaticResource CommandButtonStyle}"
+            Text="⌫"
+            Clicked="Backspace_Clicked" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Style="{StaticResource CommandButtonStyle}"
+            Text="Aa?"
+            Clicked="ToggleBoard_Clicked" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Style="{StaticResource CommandButtonStyle}"
+            Text="⌂"
+            Clicked="Clear_Clicked" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            Style="{StaticResource KeyButtonStyle}"
+            Text="⌴"
+            Clicked="SpaceInput_Clicked"
+            x:Name="space"/>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Style="{StaticResource CommandButtonStyle}"
+            Text="✓"
+            Clicked="Go_Clicked" />
+    </Grid>
+</ContentView>

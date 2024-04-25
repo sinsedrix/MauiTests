@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EntriesAndKeyboards.MainPage">
+
+    <Grid RowDefinitions="*,Auto">
+        <ScrollView>
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+                <Image
+                    Source="dotnet_bot.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="dot net bot in a race car number eight" />
+
+                <Label
+                    Text="Keyboard for entries on Windows!"
+                    SemanticProperties.HeadingLevel="Level1" />
+
+                <Entry Keyboard="Chat" />
+                <Entry Keyboard="Default" />
+                <Entry Keyboard="Email" />
+                <Entry Keyboard="Numeric" />
+                <Entry Keyboard="Plain" />
+                <Entry Keyboard="Telephone" />
+                <Entry Keyboard="Text" />
+                <Entry Keyboard="Url" />
+
+    
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <HorizontalStackLayout HorizontalOptions="Center" x:Name="kbStack" Grid.Row="1" />
+    </Grid>
+</ContentPage>

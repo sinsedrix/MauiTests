@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickerItem", "PickerItem\Pi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatusPage", "StatusPage\StatusPage.csproj", "{9F286041-1B99-434F-84FB-788CE68FEF6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modal", "Modal\Modal.csproj", "{DB442979-AF17-41D9-93DE-6B3902439483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modal", "Modal\Modal.csproj", "{DB442979-AF17-41D9-93DE-6B3902439483}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntriesAndKeyboards", "EntriesAndKeyboards\EntriesAndKeyboards.csproj", "{2F1D06E4-2536-4665-9A52-235E92F865F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{419DFB45-6426-4C43-8F6C-700B38175839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{419DFB45-6426-4C43-8F6C-700B38175839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419DFB45-6426-4C43-8F6C-700B38175839}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{419DFB45-6426-4C43-8F6C-700B38175839}.Debug|x64.ActiveCfg = Debug|x64
 		{419DFB45-6426-4C43-8F6C-700B38175839}.Debug|x64.Build.0 = Debug|x64
 		{419DFB45-6426-4C43-8F6C-700B38175839}.Debug|x64.Deploy.0 = Debug|x64
@@ -232,6 +235,24 @@ Global
 		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x86.ActiveCfg = Release|Any CPU
 		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x86.Build.0 = Release|Any CPU
 		{DB442979-AF17-41D9-93DE-6B3902439483}.Release|x86.Deploy.0 = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|x64.Build.0 = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|x86.Build.0 = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|x64.ActiveCfg = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|x64.Build.0 = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|x64.Deploy.0 = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|x86.Build.0 = Release|Any CPU
+		{2F1D06E4-2536-4665-9A52-235E92F865F7}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
